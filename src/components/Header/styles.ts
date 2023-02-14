@@ -5,6 +5,8 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
 
+    background: ${props => props.theme.background};
+
     padding: 2rem 10rem;
 
     nav{
