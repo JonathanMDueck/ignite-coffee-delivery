@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Expresso Tradicional",
+        "description": "O tradicional café feito com água quente e grãos moídos",
+        "price": 9.99,
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoTradicional"
+    },
+    {
+        "title": "Expresso Americano",
+        "description": "Expresso diluído, menos intenso que o tradicional",
+        "price": 9.99,
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoTradicional"
+    },
+    {
+        "title": "Café com Leite",
+        "description": "Meio a meio de expresso tradicional com leite vaporizado",
+        "price": 9.90,
+        "tags": [
+            "tradicional",
+            "com leite"
+        ],
+        "image": "CafeComLeite"
+    },
+    {
+        "title": "Expresso Tradicional",
+        "description": "O tradicional café feito com água quente e grãos moídos",
+        "price": 9.99,
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoTradicional"
+    },
+    {
+        "title": "Expresso Americano",
+        "description": "Expresso diluído, menos intenso que o tradicional",
+        "price": 9.99,
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoTradicional"
+    },
+    {
+        "title": "Café com Leite",
+        "description": "Meio a meio de expresso tradicional com leite vaporizado",
+        "price": 9.90,
+        "tags": [
+            "tradicional",
+            "com leite"
+        ],
+        "image": "CafeComLeite"
+    },
+    {
+        "title": "Expresso Tradicional",
+        "description": "O tradicional café feito com água quente e grãos moídos",
+        "price": 9.99,
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoTradicional"
+    },
+    {
+        "title": "Expresso Americano",
+        "description": "Expresso diluído, menos intenso que o tradicional",
+        "price": 9.99,
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoTradicional"
+    },
+    {
+        "title": "Café com Leite",
+        "description": "Meio a meio de expresso tradicional com leite vaporizado",
+        "price": 9.90,
+        "tags": [
+            "tradicional",
+            "com leite"
+        ],
+        "image": "CafeComLeite"
+    }
+]
