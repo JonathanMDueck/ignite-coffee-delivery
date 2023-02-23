@@ -2,7 +2,7 @@
     {
         "title": "Expresso Tradicional",
         "description": "O tradicional café feito com água quente e grãos moídos",
-        "price": 9.99,
+        "price": "9.90",
         "tags": [
             "tradicional"
         ],
@@ -11,16 +11,35 @@
     {
         "title": "Expresso Americano",
         "description": "Expresso diluído, menos intenso que o tradicional",
-        "price": 9.99,
+        "price": "9.90",
         "tags": [
             "tradicional"
         ],
-        "image": "ExpressoTradicional"
+        "image": "ExpressoAmericano"
+    },
+    {
+        "title": "Expresso Cremoso",
+        "description": "Café expresso tradicional com espuma cremosa",
+        "price": "9.90",
+        "tags": [
+            "tradicional"
+        ],
+        "image": "ExpressoCremoso"
+    },
+    {
+        "title": "Expresso Gelado",
+        "description": "Bebida preparada com café expresso e cubos de gelo",
+        "price": "9.90",
+        "tags": [
+            "tradicional",
+            "gelado"
+        ],
+        "image": "ExpressoGelado"
     },
     {
         "title": "Café com Leite",
         "description": "Meio a meio de expresso tradicional com leite vaporizado",
-        "price": 9.90,
+        "price": "9.90",
         "tags": [
             "tradicional",
             "com leite"
@@ -28,59 +47,92 @@
         "image": "CafeComLeite"
     },
     {
-        "title": "Expresso Tradicional",
-        "description": "O tradicional café feito com água quente e grãos moídos",
-        "price": 9.99,
-        "tags": [
-            "tradicional"
-        ],
-        "image": "ExpressoTradicional"
-    },
-    {
-        "title": "Expresso Americano",
-        "description": "Expresso diluído, menos intenso que o tradicional",
-        "price": 9.99,
-        "tags": [
-            "tradicional"
-        ],
-        "image": "ExpressoTradicional"
-    },
-    {
-        "title": "Café com Leite",
-        "description": "Meio a meio de expresso tradicional com leite vaporizado",
-        "price": 9.90,
+        "title": "Latte",
+        "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+        "price": "9.90",
         "tags": [
             "tradicional",
             "com leite"
         ],
-        "image": "CafeComLeite"
+        "image": "Latte"
     },
     {
-        "title": "Expresso Tradicional",
-        "description": "O tradicional café feito com água quente e grãos moídos",
-        "price": 9.99,
-        "tags": [
-            "tradicional"
-        ],
-        "image": "ExpressoTradicional"
-    },
-    {
-        "title": "Expresso Americano",
-        "description": "Expresso diluído, menos intenso que o tradicional",
-        "price": 9.99,
-        "tags": [
-            "tradicional"
-        ],
-        "image": "ExpressoTradicional"
-    },
-    {
-        "title": "Café com Leite",
-        "description": "Meio a meio de expresso tradicional com leite vaporizado",
-        "price": 9.90,
+        "title": "Capuccino",
+        "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+        "price": "9.90",
         "tags": [
             "tradicional",
             "com leite"
         ],
-        "image": "CafeComLeite"
+        "image": "Capuccino"
+    },
+    {
+        "title": "Macchiato",
+        "description": "Café expresso misturado com um pouco de leite quente e espuma",
+        "price": "9.90",
+        "tags": [
+            "tradicional",
+            "com leite"
+        ],
+        "image": "Macchiato"
+    },
+    {
+        "title": "Mocaccino",
+        "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+        "price": "9.90",
+        "tags": [
+            "tradicional",
+            "com leite"
+        ],
+        "image": "Mocaccino"
+    },
+    {
+        "title": "Chocolate Quente",
+        "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+        "price": "9.90",
+        "tags": [
+            "especial",
+            "com leite"
+        ],
+        "image": "ChocolateQuente"
+    },
+    {
+        "title": "Cubano",
+        "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+        "price": "9.90",
+        "tags": [
+            "especial",
+            "alcoólico",
+            "gelado"
+        ],
+        "image": "Cubano"
+    },
+    {
+        "title": "Havaiano",
+        "description": "Bebida adocicada preparada com café e leite de coco",
+        "price": "9.90",
+        "tags": [
+            "especial"
+        ],
+        "image": "Havaiano"
+    },
+    {
+        "title": "Árabe",
+        "description": "Bebida preparada com grãos de café árabe e especiarias",
+        "price": "9.90",
+        "tags": [
+            "especial"
+        ],
+        "image": "Arabe"
+    },
+    {
+        "title": "Irlandês",
+        "description": "Bebida a base de café, uísque irlandeês, açúcar e chantilly",
+        "price": "9.90",
+        "tags": [
+            "especial",
+            "alcoólico"
+        ],
+        "image": "Irlandes"
     }
 ]

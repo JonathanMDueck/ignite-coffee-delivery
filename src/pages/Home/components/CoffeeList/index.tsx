@@ -10,7 +10,8 @@ export function CoffeeList() {
 
                 {coffeeList.map(item => {
                     return (
-                        <CoffeeCard title={item.title}
+                        <CoffeeCard key={item.title}
+                            title={item.title}
                             description={item.description}
                             tags={item.tags}
                             price={item.price}

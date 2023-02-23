@@ -14,7 +14,7 @@ export function Intro() {
                         Encontre o café perfeito para qualquer hora do dia
                     </h1>
                     <span>
-                        Com o Coffee Delivery você recebe o seu café onde estiver, a qualquer hora
+                        Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora
                     </span>
 
                     <InfoContainer>
@@ -40,7 +40,7 @@ export function Intro() {
                             <CoffeeIcon>
                                 <Coffee size={16} weight="fill" />
                             </CoffeeIcon>
-                            <span>O café hega fresquinho até você</span>
+                            <span>O café chega fresquinho até você</span>
                         </InfoLabelContainer>
                     </InfoContainer>
 

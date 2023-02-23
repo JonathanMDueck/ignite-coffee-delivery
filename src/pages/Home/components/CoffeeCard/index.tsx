@@ -1,5 +1,5 @@
-import ExpressoTradicional from '../../../../assets/ExpressoTradicional.png'
-import CafeComLeite from '../../../../assets/CafeComLeite.png'
+import coffeImages, { coffeeImages, getImageSource } from './coffeeImages';
+
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import {
   CoffeeCardContainer,
@@ -14,7 +14,7 @@ interface CofffeeCardProps {
   title: string
   description: string
   tags: string[]
-  price: number
+  price: string
   image: string
 }
 
@@ -25,18 +25,19 @@ export function CoffeeCard({
   price,
   image,
 }: CofffeeCardProps) {
-  function getImageSource() {
-    switch (image) {
-      case 'ExpressoTradicional':
-        return ExpressoTradicional
-      case 'CafeComLeite':
-        return CafeComLeite
-    }
+
+  function getImageSource(imageName: string) {
+    return coffeeImages.find(item => item.title === imageName)?.image
+
   }
+
+
 
   return (
     <CoffeeCardContainer>
-      <img src={getImageSource()} alt="" />
+      <img
+        src={getImageSource(image)}
+        alt="" />
       <TagContainer>
         {tags.map((item) => {
           return <Tag key={item}>{item.toUpperCase()}</Tag>

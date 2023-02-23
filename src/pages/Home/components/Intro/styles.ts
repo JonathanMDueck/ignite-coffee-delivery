@@ -14,10 +14,8 @@ export const BackgroundContainer = styled.div`
 `
 
 export const IntroContainer = styled.div`
-
     display: flex;
-    justify-content: center;
-
+    justify-content: space-between;
     padding: 5.875rem 10rem;
 
     img{
@@ -28,11 +26,10 @@ export const IntroContainer = styled.div`
 `
 
 export const TitleContainer = styled.div`
-
-    padding-right: 3.5rem;
-
     display: flex;
     flex-direction: column;
+
+    width: 36.75rem;
     
 
     h1 {
@@ -56,8 +53,9 @@ export const TitleContainer = styled.div`
 `
 
 export const InfoContainer = styled.div`
+
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 47% 53%;
     margin-top: 4.125rem;
 `
 
@@ -67,6 +65,7 @@ export const InfoLabelContainer = styled.div`
     align-items: center;
     
     margin-bottom: 1.25rem;
+
     
     span{
         font-size: 1rem;
