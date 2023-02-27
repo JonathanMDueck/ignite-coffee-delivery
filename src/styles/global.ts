@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
     -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
 }
 
 body, input, textarea, button {
