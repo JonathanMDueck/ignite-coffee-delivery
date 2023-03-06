@@ -13,61 +13,61 @@ import Latte from '../../../../assets/Latte.png'
 import Macchiato from '../../../../assets/Macchiato.png'
 import Mocaccino from '../../../../assets/Mocaccino.png'
 
-
-
-export const coffeeImages = [{
-    title: "ExpressoTradicional",
-    image: ExpressoTradicional
-},
-{
-    title: "ExpressoAmericano",
-    image: ExpressoAmericano
-},
-{
-    title: "CafeComLeite",
-    image: CafeComLeite
-},
-{
-    title: "Arabe",
-    image: Arabe
-},
-{
-    title: "Capuccino",
-    image: Capuccino
-},
-{
-    title: "ChocolateQuente",
-    image: ChocolateQuente
-},
-{
-    title: "Cubano",
-    image: Cubano
-},
-{
-    title: "ExpressoCremoso",
-    image: ExpressoCremoso
-},
-{
-    title: "ExpressoGelado",
-    image: ExpressoGelado
-},
-{
-    title: "Havaiano",
-    image: Havaiano
-},
-{
-    title: "Irlandes",
-    image: Irlandes
-},
-{
-    title: "Latte",
-    image: Latte
-},
-{
-    title: "Macchiato",
-    image: Macchiato
-},
-{
-    title: "Mocaccino",
-    image: Mocaccino
-}]
+export const coffeeImages = [
+  {
+    title: 'ExpressoTradicional',
+    image: ExpressoTradicional,
+  },
+  {
+    title: 'ExpressoAmericano',
+    image: ExpressoAmericano,
+  },
+  {
+    title: 'CafeComLeite',
+    image: CafeComLeite,
+  },
+  {
+    title: 'Arabe',
+    image: Arabe,
+  },
+  {
+    title: 'Capuccino',
+    image: Capuccino,
+  },
+  {
+    title: 'ChocolateQuente',
+    image: ChocolateQuente,
+  },
+  {
+    title: 'Cubano',
+    image: Cubano,
+  },
+  {
+    title: 'ExpressoCremoso',
+    image: ExpressoCremoso,
+  },
+  {
+    title: 'ExpressoGelado',
+    image: ExpressoGelado,
+  },
+  {
+    title: 'Havaiano',
+    image: Havaiano,
+  },
+  {
+    title: 'Irlandes',
+    image: Irlandes,
+  },
+  {
+    title: 'Latte',
+    image: Latte,
+  },
+  {
+    title: 'Macchiato',
+    image: Macchiato,
+  },
+  {
+    title: 'Mocaccino',
+    image: Mocaccino,
+  },
+]

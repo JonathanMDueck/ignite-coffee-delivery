@@ -48,6 +48,8 @@ export const CartButton = styled.button`
   border: none;
   border-radius: 6px;
 
+  cursor: pointer;
+
   background: ${(props) => props.theme['yellow-light']};
   color: ${(props) => props.theme['yellow-dark']};
 `

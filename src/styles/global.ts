@@ -10,7 +10,8 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
     -webkit-font-smoothing: antialiased;
-    scrollbar-gutter: stable;
+    overflow-y: scroll;
+    background: ${(props) => props.theme.background};
 }
 
 body, input, textarea, button {

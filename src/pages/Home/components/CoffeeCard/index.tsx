@@ -1,4 +1,4 @@
-import coffeImages, { coffeeImages, getImageSource } from './coffeeImages';
+import { coffeeImages } from './coffeeImages'
 
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import {
@@ -25,19 +25,13 @@ export function CoffeeCard({
   price,
   image,
 }: CofffeeCardProps) {
-
   function getImageSource(imageName: string) {
-    return coffeeImages.find(item => item.title === imageName)?.image
-
+    return coffeeImages.find((item) => item.title === imageName)?.image
   }
-
-
 
   return (
     <CoffeeCardContainer>
-      <img
-        src={getImageSource(image)}
-        alt="" />
+      <img src={getImageSource(image)} alt="" />
       <TagContainer>
         {tags.map((item) => {
           return <Tag key={item}>{item.toUpperCase()}</Tag>
