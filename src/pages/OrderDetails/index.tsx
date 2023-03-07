@@ -1,4 +1,4 @@
-import { AddressContainer } from './components/AddressDetails'
+import { AddressContainer } from './components/AddressContainer'
 import { SelectedCoffeeDetails } from './components/SelectedCoffeeDetails'
 import { OrderDetailsContainer } from './styles'
 
