@@ -9,11 +9,14 @@ export const ConfirmedOrderContainer = styled.div`
   img {
     height: 18.3125rem;
     width: 30.75rem;
+
+    margin-top: 6.25rem;
+    align-items: flex-end;
   }
 `
 export const OrderInfo = styled.div`
   span {
-    color: ${(props) => props.theme.yellow};
+    color: ${(props) => props.theme['yellow-dark']};
     font-family: 'Baloo 2', cursive;
     font-weight: 800;
     line-height: 2.6rem;
@@ -34,6 +37,7 @@ export const OrderDetails = styled.div`
 
   padding: 2.5rem;
   border-radius: 6px 36px;
+  width: 32.875rem;
 `
 
 export const BaseInfo = styled.div`
@@ -41,11 +45,14 @@ export const BaseInfo = styled.div`
   align-items: center;
   font-size: 1rem;
   color: ${(props) => props.theme['base-text']};
-  margin-bottom: 2rem;
   div {
     display: flex;
     flex-direction: column;
     line-height: 1.3rem;
+  }
+
+  &:not(:first-child) {
+    margin-top: 2rem;
   }
 `
 

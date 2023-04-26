@@ -53,3 +53,35 @@ export const CartButton = styled.button`
   background: ${(props) => props.theme['yellow-light']};
   color: ${(props) => props.theme['yellow-dark']};
 `
+
+interface CounterProps {
+  active: boolean
+}
+
+export const Counter = styled.div<CounterProps>`
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background: ${(props) => props.theme['yellow-dark']};
+  color: ${(props) => props.theme.white};
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  margin-right: -2.125rem;
+  margin-top: -2.125rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    display: none;
+  }
+
+  ${({ active }) =>
+    active &&
+    `
+    display: none;
+  `}
+`

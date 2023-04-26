@@ -9,12 +9,14 @@ import {
   PriceContainer,
   AmountContainer,
 } from './styles'
+import { useContext, useState } from 'react'
+import { OrderContext } from '../../../../contexts/orderContext'
 
 interface CofffeeCardProps {
   title: string
   description: string
   tags: string[]
-  price: string
+  price: number
   image: string
 }
 
@@ -27,6 +29,28 @@ export function CoffeeCard({
 }: CofffeeCardProps) {
   function getImageSource(imageName: string) {
     return coffeeImages.find((item) => item.title === imageName)?.image
+  }
+
+  const { addCoffeeToList } = useContext(OrderContext)
+
+  const [quantity, setQuantity] = useState(0)
+
+  function addCoffee() {
+    setQuantity(quantity + 1)
+  }
+
+  function dropCoffe() {
+    if (quantity > 0) {
+      setQuantity(quantity - 1)
+    }
+  }
+
+  function addCoffeeToOrder() {
+    const newCoffee = { title, quantity, price }
+
+    addCoffeeToList(newCoffee)
+
+    setQuantity(0)
   }
 
   return (
@@ -45,11 +69,11 @@ export function CoffeeCard({
           <span>{price}</span>
         </PriceContainer>
         <AmountContainer>
-          <Minus size={14} />
-          <span>1</span>
-          <Plus size={14} />
+          <Minus size={14} onClick={dropCoffe} />
+          <span>{quantity}</span>
+          <Plus size={14} onClick={addCoffee} />
         </AmountContainer>
-        <button>
+        <button disabled={!quantity} onClick={addCoffeeToOrder}>
           <ShoppingCart weight="fill" size={22} />
         </button>
       </BuyContainer>

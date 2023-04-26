@@ -8,46 +8,47 @@ import {
   CoffeeCard,
   Actions,
 } from './styles'
+import { useContext } from 'react'
+import { OrderContext } from '../../../../contexts/orderContext'
 
 export function SelectedCoffeeCard() {
+  const { increaseCoffeeCounter, selectedCoffee, decreaseCoffeeCounter } =
+    useContext(OrderContext)
+
+  function getImageSource(imageName: string) {
+    const image = imageName.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
+    return coffeeImages.find((item) => item.title === image)?.image
+  }
+
+  function addCoffee(title: string) {
+    increaseCoffeeCounter(title)
+  }
+
   return (
     <>
-      <CoffeeCard>
-        <img src={coffeeImages[0].image} alt="" />
-        <Details>
-          <span>Expresso Tradicional</span>
-          <Actions>
-            <AmountContainer>
-              <Minus />
-              <p>1</p>
-              <Plus />
-            </AmountContainer>
-            <RemoveButton>
-              <Trash size={16} />
-              REMOVER
-            </RemoveButton>
-          </Actions>
-        </Details>
-        <PriceTag>R$ 9,90</PriceTag>
-      </CoffeeCard>
-      <CoffeeCard>
-        <img src={coffeeImages[0].image} alt="" />
-        <Details>
-          <span>Expresso Tradicional</span>
-          <Actions>
-            <AmountContainer>
-              <Minus />
-              <p>1</p>
-              <Plus />
-            </AmountContainer>
-            <RemoveButton>
-              <Trash size={16} />
-              REMOVER
-            </RemoveButton>
-          </Actions>
-        </Details>
-        <PriceTag>R$ 9,90</PriceTag>
-      </CoffeeCard>
+      {selectedCoffee.map((item) => {
+        return (
+          <CoffeeCard key={item.title}>
+            <img src={getImageSource(item.title.replaceAll(' ', ''))} alt="" />
+            <Details>
+              <span>{item.title}</span>
+              <Actions>
+                <AmountContainer>
+                  <Minus onClick={() => decreaseCoffeeCounter(item.title)} />
+                  <p>{item.quantity}</p>
+                  <Plus onClick={() => increaseCoffeeCounter(item.title)} />
+                </AmountContainer>
+                <RemoveButton>
+                  <Trash size={16} />
+                  REMOVER
+                </RemoveButton>
+              </Actions>
+            </Details>
+            <PriceTag>R$ {item.price}</PriceTag>
+          </CoffeeCard>
+        )
+      })}
     </>
   )
 }

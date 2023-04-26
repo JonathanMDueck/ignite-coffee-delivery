@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const OrderDetailsContainer = styled.div`
+export const OrderDetailsContainer = styled.form`
   background: ${(props) => props.theme.background};
   padding: 2.5rem 10rem;
 
