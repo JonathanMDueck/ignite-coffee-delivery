@@ -70,18 +70,8 @@ export const Counter = styled.div<CounterProps>`
 
   margin-right: -2.125rem;
   margin-top: -2.125rem;
-
-  display: flex;
   align-items: center;
   justify-content: center;
 
-  &:disabled {
-    display: none;
-  }
-
-  ${({ active }) =>
-    active &&
-    `
-    display: none;
-  `}
+  display: ${(props) => (props.active ? 'flex' : 'none')};
 `

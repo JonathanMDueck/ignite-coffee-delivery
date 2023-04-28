@@ -12,17 +12,17 @@ import { useContext } from 'react'
 import { OrderContext } from '../../../../contexts/orderContext'
 
 export function SelectedCoffeeCard() {
-  const { increaseCoffeeCounter, selectedCoffee, decreaseCoffeeCounter } =
-    useContext(OrderContext)
+  const {
+    increaseCoffeeCounter,
+    selectedCoffee,
+    decreaseCoffeeCounter,
+    removeCoffee,
+  } = useContext(OrderContext)
 
   function getImageSource(imageName: string) {
     const image = imageName.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
     return coffeeImages.find((item) => item.title === image)?.image
-  }
-
-  function addCoffee(title: string) {
-    increaseCoffeeCounter(title)
   }
 
   return (
@@ -39,7 +39,7 @@ export function SelectedCoffeeCard() {
                   <p>{item.quantity}</p>
                   <Plus onClick={() => increaseCoffeeCounter(item.title)} />
                 </AmountContainer>
-                <RemoveButton>
+                <RemoveButton onClick={() => removeCoffee(item.title)}>
                   <Trash size={16} />
                   REMOVER
                 </RemoveButton>

@@ -19,6 +19,17 @@ export const OrderDescription = styled.div`
   padding: 2.5rem;
 `
 
+export const NoItemsDescriptions = styled.div`
+  background: ${(props) => props.theme['base-card']};
+  border-radius: 6px 36px;
+
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 400;
+
+  padding: 2.5rem 3rem;
+  align-items: center;
+`
+
 export const LabelPriceContainer = styled.div`
   margin-top: 1.5rem;
 `

@@ -32,7 +32,8 @@ interface OrderContextType {
   countCoffeeQuantity: () => number
   increaseCoffeeCounter: (title: string) => void
   decreaseCoffeeCounter: (title: string) => void
-  shoppingCartPrice: () => void
+  shoppingCartPrice: () => number
+  removeCoffee: (title: string) => void
 }
 
 export const OrderContext = createContext({} as OrderContextType)
@@ -67,17 +68,15 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
 
   function decreaseCoffeeCounter(title: string) {
     const coffee = selectedCoffee.findIndex((item) => item.title === title)
-    const temporaryList = produce(selectedCoffee, (draft) => {
-      if (draft[coffee].quantity > 0) {
-        draft[coffee].quantity -= 1
-      } else {
-        console.log(draft.length)
-        draft = draft.filter((item) => item.title !== title)
-        console.log(draft.length)
-      }
-    })
 
-    setSelectedCoffee(temporaryList)
+    if (selectedCoffee[coffee].quantity === 1) {
+      removeCoffee(title)
+    } else {
+      const temporaryList = produce(selectedCoffee, (draft) => {
+        draft[coffee].quantity -= 1
+      })
+      setSelectedCoffee(temporaryList)
+    }
   }
 
   function countCoffeeQuantity() {
@@ -100,6 +99,13 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
     return totalPrice
   }
 
+  function removeCoffee(title: string) {
+    const updatedCoffee = selectedCoffee.filter((item) => {
+      return item.title !== title
+    })
+    setSelectedCoffee(updatedCoffee)
+  }
+
   return (
     <OrderContext.Provider
       value={{
@@ -109,6 +115,7 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
         increaseCoffeeCounter,
         decreaseCoffeeCounter,
         shoppingCartPrice,
+        removeCoffee,
       }}
     >
       {children}
