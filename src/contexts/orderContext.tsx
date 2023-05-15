@@ -1,6 +1,12 @@
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useReducer } from 'react'
 
-import { produce } from 'immer'
+import { SelectedCoffeeReducer } from '../reducers/selectedCoffee/reducer'
+import {
+  addCoffeeToListAction,
+  decreaseCoffeeCounterAction,
+  increaseCoffeeCounterAction,
+  removeCoffeeFromListAction,
+} from '../reducers/selectedCoffee/actions'
 
 interface OrderContextProviderProps {
   children: ReactNode
@@ -26,7 +32,7 @@ interface Order {
   payment: 'credito' | 'debito' | 'dinheiro'
 }
 
-interface OrderContextType {
+interface SelectedCoffeeContextType {
   selectedCoffee: SelectedCoffee[]
   addCoffeeToList: (data: SelectedCoffee) => void
   countCoffeeQuantity: () => number
@@ -36,47 +42,27 @@ interface OrderContextType {
   removeCoffee: (title: string) => void
 }
 
-export const OrderContext = createContext({} as OrderContextType)
+export const SelectedCoffeeContext = createContext(
+  {} as SelectedCoffeeContextType,
+)
 
 export function OrderContextProvider({ children }: OrderContextProviderProps) {
-  const [selectedCoffee, setSelectedCoffee] = useState<SelectedCoffee[]>([])
+  const [selectedCoffee, dispatch] = useReducer(SelectedCoffeeReducer, [])
 
-  function addCoffeeToList({ title, quantity, price }: SelectedCoffee) {
-    const coffee = selectedCoffee.findIndex((item) => item.title === title)
-
-    let temporaryList = []
-
-    if (coffee >= 0) {
-      temporaryList = produce(selectedCoffee, (draft) => {
-        draft[coffee].quantity += quantity
-      })
-    } else {
-      temporaryList = produce(selectedCoffee, (draft) => {
-        draft.push({ title, quantity, price })
-      })
-    }
-    setSelectedCoffee(temporaryList)
+  function addCoffeeToList(newCoffee: SelectedCoffee) {
+    dispatch(addCoffeeToListAction(newCoffee))
   }
 
   function increaseCoffeeCounter(title: string) {
-    const coffee = selectedCoffee.findIndex((item) => item.title === title)
-    const temporaryList = produce(selectedCoffee, (draft) => {
-      draft[coffee].quantity += 1
-    })
-    setSelectedCoffee(temporaryList)
+    dispatch(increaseCoffeeCounterAction(title))
   }
 
   function decreaseCoffeeCounter(title: string) {
-    const coffee = selectedCoffee.findIndex((item) => item.title === title)
+    dispatch(decreaseCoffeeCounterAction(title))
+  }
 
-    if (selectedCoffee[coffee].quantity === 1) {
-      removeCoffee(title)
-    } else {
-      const temporaryList = produce(selectedCoffee, (draft) => {
-        draft[coffee].quantity -= 1
-      })
-      setSelectedCoffee(temporaryList)
-    }
+  function removeCoffee(title: string) {
+    dispatch(removeCoffeeFromListAction(title))
   }
 
   function countCoffeeQuantity() {
@@ -99,15 +85,8 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
     return totalPrice
   }
 
-  function removeCoffee(title: string) {
-    const updatedCoffee = selectedCoffee.filter((item) => {
-      return item.title !== title
-    })
-    setSelectedCoffee(updatedCoffee)
-  }
-
   return (
-    <OrderContext.Provider
+    <SelectedCoffeeContext.Provider
       value={{
         selectedCoffee,
         addCoffeeToList,
@@ -119,6 +98,6 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
       }}
     >
       {children}
-    </OrderContext.Provider>
+    </SelectedCoffeeContext.Provider>
   )
 }

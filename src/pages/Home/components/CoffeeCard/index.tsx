@@ -10,7 +10,7 @@ import {
   AmountContainer,
 } from './styles'
 import { useContext, useState } from 'react'
-import { OrderContext } from '../../../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../../../contexts/orderContext'
 
 interface CofffeeCardProps {
   title: string
@@ -31,7 +31,7 @@ export function CoffeeCard({
     return coffeeImages.find((item) => item.title === imageName)?.image
   }
 
-  const { addCoffeeToList } = useContext(OrderContext)
+  const { addCoffeeToList } = useContext(SelectedCoffeeContext)
 
   const [quantity, setQuantity] = useState(0)
 

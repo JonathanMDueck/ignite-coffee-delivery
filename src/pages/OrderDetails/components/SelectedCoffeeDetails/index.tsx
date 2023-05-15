@@ -10,10 +10,10 @@ import {
 
 import { SelectedCoffeeCard } from '../SelectedCoffeeCard'
 import { useContext } from 'react'
-import { OrderContext } from '../../../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../../../contexts/orderContext'
 
 export function SelectedCoffeeDetails() {
-  const { shoppingCartPrice } = useContext(OrderContext)
+  const { shoppingCartPrice } = useContext(SelectedCoffeeContext)
 
   const totalItems = shoppingCartPrice()
 

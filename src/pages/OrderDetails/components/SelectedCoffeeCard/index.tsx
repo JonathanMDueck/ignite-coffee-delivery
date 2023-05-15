@@ -9,7 +9,7 @@ import {
   Actions,
 } from './styles'
 import { useContext } from 'react'
-import { OrderContext } from '../../../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../../../contexts/orderContext'
 
 export function SelectedCoffeeCard() {
   const {
@@ -17,7 +17,7 @@ export function SelectedCoffeeCard() {
     selectedCoffee,
     decreaseCoffeeCounter,
     removeCoffee,
-  } = useContext(OrderContext)
+  } = useContext(SelectedCoffeeContext)
 
   function getImageSource(imageName: string) {
     const image = imageName.normalize('NFD').replace(/[\u0300-\u036f]/g, '')

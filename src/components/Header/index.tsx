@@ -4,10 +4,10 @@ import CoffeeDeliveryLogo from '../../assets/Logo.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
-import { OrderContext } from '../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../contexts/orderContext'
 
 export function Header() {
-  const { countCoffeeQuantity } = useContext(OrderContext)
+  const { countCoffeeQuantity } = useContext(SelectedCoffeeContext)
 
   const quantity = countCoffeeQuantity()
 
