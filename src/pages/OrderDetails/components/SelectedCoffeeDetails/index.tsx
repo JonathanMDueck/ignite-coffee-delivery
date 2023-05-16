@@ -10,7 +10,7 @@ import {
 
 import { SelectedCoffeeCard } from '../SelectedCoffeeCard'
 import { useContext } from 'react'
-import { SelectedCoffeeContext } from '../../../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../../../contexts/selectedCoffeeContext'
 
 export function SelectedCoffeeDetails() {
   const { shoppingCartPrice } = useContext(SelectedCoffeeContext)
@@ -41,7 +41,7 @@ export function SelectedCoffeeDetails() {
               </TotalLine>
             </LabelPriceContainer>
           </div>
-          <ConfirmButton>CONFIRMAR PEDIDO</ConfirmButton>
+          <ConfirmButton type="submit">CONFIRMAR PEDIDO</ConfirmButton>
         </OrderDescription>
       )}
     </SelectedCoffeeContainer>

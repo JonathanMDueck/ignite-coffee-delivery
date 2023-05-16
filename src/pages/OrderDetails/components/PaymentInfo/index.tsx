@@ -5,8 +5,12 @@ import {
   PaymentLabel,
   PaymentOptionsContainer,
 } from './styles'
+import { useContext } from 'react'
+import { OrderContext } from '../../../../contexts/orderContext'
 
 export function PaymentInfo() {
+  const { order } = useContext(OrderContext)
+
   return (
     <PaymentInfoConatainer>
       <PaymentLabel>
@@ -19,9 +23,18 @@ export function PaymentInfo() {
         </div>
       </PaymentLabel>
       <PaymentOptionsContainer>
-        <PaymentOptionCard paymentType="CARTÃO DE CRÉDITO" />
-        <PaymentOptionCard paymentType="CARTÃO DE DÉBITO" />
-        <PaymentOptionCard paymentType="DINHEIRO" />
+        <PaymentOptionCard
+          paymentType="CARTÃO DE CRÉDITO"
+          active={order?.payment === 'CARTÃO DE CRÉDITO'}
+        />
+        <PaymentOptionCard
+          paymentType="CARTÃO DE DÉBITO"
+          active={order?.payment === 'CARTÃO DE DÉBITO'}
+        />
+        <PaymentOptionCard
+          paymentType="DINHEIRO"
+          active={order?.payment === 'DINHEIRO'}
+        />
       </PaymentOptionsContainer>
     </PaymentInfoConatainer>
   )

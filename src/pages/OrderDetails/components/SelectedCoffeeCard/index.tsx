@@ -9,7 +9,7 @@ import {
   Actions,
 } from './styles'
 import { useContext } from 'react'
-import { SelectedCoffeeContext } from '../../../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../../../contexts/selectedCoffeeContext'
 
 export function SelectedCoffeeCard() {
   const {

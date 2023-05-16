@@ -72,6 +72,9 @@ export const UFInput = styled(BaseInput)`
 
 export const AddressInfo = styled.div`
   margin-bottom: 2rem;
+
+  display: flex;
+
   span {
     font-size: 1rem;
     line-height: 1.3rem;
@@ -82,7 +85,6 @@ export const AddressInfo = styled.div`
     font-size: 0.875rem;
     line-height: 1.1375rem;
     color: ${(props) => props.theme['base-text']};
-    padding-left: 1.875rem;
   }
 
   svg {

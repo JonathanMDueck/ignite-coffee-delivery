@@ -11,27 +11,44 @@ import {
   UFInput,
 } from './styles'
 import { PaymentInfo } from '../PaymentInfo'
+import { useFormContext } from 'react-hook-form'
 
 export function AddressContainer() {
+  const { register } = useFormContext()
+
   return (
     <CompleteYourOrderContainer>
       <span>Complete seu pedido</span>
       <AddressInfoContainer>
         <AddressInfo>
           <MapPinLine size={22} />
-          <span>Endereço de Entrega</span>
-          <p>Informe o endereço onde deseja receber seu pedido</p>
+          <div>
+            <span>Endereço de Entrega</span>
+            <p>Informe o endereço onde deseja receber seu pedido</p>
+          </div>
         </AddressInfo>
-        <DefaultInput type="text" placeholder="CEP" />
-        <StreetInput type="text" placeholder="Rua" />
+        <DefaultInput type="text" placeholder="CEP" {...register('cep')} />
+        <StreetInput type="text" placeholder="Rua" {...register('rua')} />
         <StackedInputs>
-          <DefaultInput type="text" placeholder="Número" />
-          <ComplementInput type="text" placeholder="Complemento" />
+          <DefaultInput
+            type="text"
+            placeholder="Número"
+            {...register('numero', { valueAsNumber: true })}
+          />
+          <ComplementInput
+            type="text"
+            placeholder="Complemento"
+            {...register('complemento', { valueAsNumber: true })}
+          />
         </StackedInputs>
         <StackedInputs>
-          <DefaultInput type="text" placeholder="Bairro" />
-          <CityInput type="text" placeholder="Cidade" />
-          <UFInput type="text" placeholder="UF" />
+          <DefaultInput
+            type="text"
+            placeholder="Bairro"
+            {...register('bairro')}
+          />
+          <CityInput type="text" placeholder="Cidade" {...register('cidade')} />
+          <UFInput type="text" placeholder="UF" {...register('uf')} />
         </StackedInputs>
       </AddressInfoContainer>
       <PaymentInfo />

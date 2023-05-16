@@ -4,15 +4,18 @@ import { Router } from './Router'
 import { GlobalStyle } from './styles/global'
 
 import { defaultTheme } from './styles/themes/default'
+import { SelectedCoffeeContextProvider } from './contexts/selectedCoffeeContext'
 import { OrderContextProvider } from './contexts/orderContext'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <OrderContextProvider>
-          <Router />
-        </OrderContextProvider>
+        <SelectedCoffeeContextProvider>
+          <OrderContextProvider>
+            <Router />
+          </OrderContextProvider>
+        </SelectedCoffeeContextProvider>
         <GlobalStyle />
       </BrowserRouter>
     </ThemeProvider>

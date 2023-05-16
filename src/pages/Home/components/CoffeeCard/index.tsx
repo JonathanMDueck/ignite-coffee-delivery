@@ -10,7 +10,7 @@ import {
   AmountContainer,
 } from './styles'
 import { useContext, useState } from 'react'
-import { SelectedCoffeeContext } from '../../../../contexts/orderContext'
+import { SelectedCoffeeContext } from '../../../../contexts/selectedCoffeeContext'
 
 interface CofffeeCardProps {
   title: string

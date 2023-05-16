@@ -10,8 +10,14 @@ import {
 } from './styles'
 
 import ConfirmedOrderImage from '../../assets/ConfirmedOrder.png'
+import { useContext } from 'react'
+import { OrderContext } from '../../contexts/orderContext'
 
 export function ConfirmedOrder() {
+  const { order } = useContext(OrderContext)
+
+  console.log(order)
+
   return (
     <ConfirmedOrderContainer>
       <OrderInfo>
@@ -24,9 +30,15 @@ export function ConfirmedOrder() {
             </MapPinIcon>
             <div>
               <label>
-                Entrega em <b>Rua Joao Daniel Martinelli, 102</b>
+                Entrega em{' '}
+                <b>
+                  {order?.rua}, {order?.numero}
+                  {order?.complemento ? ', ' + order.complemento : ''}
+                </b>
               </label>
-              <label>Farrapos - Porto Alegre, RS</label>
+              <label>
+                {order?.bairro} - {order?.cidade}, {order?.uf}
+              </label>
             </div>
           </BaseInfo>
           <BaseInfo>
@@ -47,7 +59,7 @@ export function ConfirmedOrder() {
             <div>
               <label>Pagamento na entrega</label>
               <label>
-                <b>Cartão de Crédito</b>
+                <b>{order?.payment}</b>
               </label>
             </div>
           </BaseInfo>
