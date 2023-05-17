@@ -14,7 +14,6 @@ interface Order {
   uf: string
   payment?: string
 }
-
 interface OrderContextType {
   order: Order | undefined
   createNewOrder: (order: Order) => void

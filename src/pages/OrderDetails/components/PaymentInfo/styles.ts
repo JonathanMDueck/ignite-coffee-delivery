@@ -48,3 +48,42 @@ export const PaymentOptionsContainer = styled.div`
 
   margin-bottom: 2.5rem;
 `
+interface CardProps {
+  active: boolean
+}
+
+export const Card = styled.div<CardProps>`
+  padding-left: 1rem;
+  margin-right: 0.75rem;
+  background: ${(props) =>
+    props.active ? props.theme['purple-light'] : props.theme['base-button']};
+  padding-left: 1rem;
+  padding-top: 1.09375rem;
+  padding-bottom: 1.09375rem;
+  width: 100%;
+
+  border: solid 1px;
+  border-color: ${(props) =>
+    props.active ? props.theme.purple : props.theme['base-card']};
+
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+
+  font-size: 0.75rem;
+  color: ${(props) => props.theme['base-text']};
+
+  svg {
+    color: ${(props) => props.theme.purple};
+    margin-right: 0.75rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: ${(props) =>
+      props.active ? props.theme['purple-light'] : props.theme['base-hover']};
+    color: ${(props) => props.theme['base-subtitle']};
+  }
+`

@@ -29,15 +29,15 @@ export function SelectedCoffeeDetails() {
             <LabelPriceContainer>
               <PaymentLine>
                 <span>Total de itens</span>
-                <label>{totalItems}</label>
+                <label>{Number(totalItems).toFixed(2)}</label>
               </PaymentLine>
               <PaymentLine>
                 <span>Entrega</span>
-                <label>3,50</label>
+                <label>3.50</label>
               </PaymentLine>
               <TotalLine>
                 <span>Total</span>
-                <label>{totalItems + 3.5}</label>
+                <label>{Number(totalItems + 3.5).toFixed(2)}</label>
               </TotalLine>
             </LabelPriceContainer>
           </div>

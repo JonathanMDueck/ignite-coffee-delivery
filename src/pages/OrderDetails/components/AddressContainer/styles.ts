@@ -10,6 +10,11 @@ export const CompleteYourOrderContainer = styled.div`
   span {
     margin-bottom: 0.9375rem;
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 `
 
 export const AddressInfoContainer = styled.div`

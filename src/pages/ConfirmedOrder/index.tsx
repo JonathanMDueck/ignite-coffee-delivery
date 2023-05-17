@@ -15,9 +15,6 @@ import { OrderContext } from '../../contexts/orderContext'
 
 export function ConfirmedOrder() {
   const { order } = useContext(OrderContext)
-
-  console.log(order)
-
   return (
     <ConfirmedOrderContainer>
       <OrderInfo>

@@ -1,6 +1,6 @@
-import { PaymentOptionCard } from '../PaymentOptionCard'
-import { CurrencyDollar } from 'phosphor-react'
+import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react'
 import {
+  Card,
   PaymentInfoConatainer,
   PaymentLabel,
   PaymentOptionsContainer,
@@ -8,8 +8,18 @@ import {
 import { useContext } from 'react'
 import { OrderContext } from '../../../../contexts/orderContext'
 
+enum PaymentTypes {
+  CREDITO = 'CARTÃO DE CRÉDITO',
+  DEBITO = 'CARTÃO DE DÉBITO',
+  DINHEIRO = 'DINHEIRO',
+}
+
 export function PaymentInfo() {
-  const { order } = useContext(OrderContext)
+  const { order, updatePaymentType } = useContext(OrderContext)
+
+  function handleUpdatePaymenteType(paymentType: string) {
+    updatePaymentType(paymentType)
+  }
 
   return (
     <PaymentInfoConatainer>
@@ -23,18 +33,33 @@ export function PaymentInfo() {
         </div>
       </PaymentLabel>
       <PaymentOptionsContainer>
-        <PaymentOptionCard
-          paymentType="CARTÃO DE CRÉDITO"
-          active={order?.payment === 'CARTÃO DE CRÉDITO'}
-        />
-        <PaymentOptionCard
-          paymentType="CARTÃO DE DÉBITO"
-          active={order?.payment === 'CARTÃO DE DÉBITO'}
-        />
-        <PaymentOptionCard
-          paymentType="DINHEIRO"
-          active={order?.payment === 'DINHEIRO'}
-        />
+        <Card
+          onClick={() => {
+            handleUpdatePaymenteType(PaymentTypes.CREDITO)
+          }}
+          active={order?.payment === PaymentTypes.CREDITO}
+        >
+          <CreditCard size={16} />
+          CARTÃO DE CRÉDITO
+        </Card>
+        <Card
+          onClick={() => {
+            handleUpdatePaymenteType(PaymentTypes.DEBITO)
+          }}
+          active={order?.payment === PaymentTypes.DEBITO}
+        >
+          <Bank size={16} />
+          CARTÃO DE DÉBITO
+        </Card>
+        <Card
+          onClick={() => {
+            handleUpdatePaymenteType(PaymentTypes.DINHEIRO)
+          }}
+          active={order?.payment === PaymentTypes.DINHEIRO}
+        >
+          <Money size={16} />
+          DINHEIRO
+        </Card>
       </PaymentOptionsContainer>
     </PaymentInfoConatainer>
   )

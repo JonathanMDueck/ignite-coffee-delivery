@@ -31,7 +31,7 @@ export function AddressContainer() {
         <StreetInput type="text" placeholder="Rua" {...register('rua')} />
         <StackedInputs>
           <DefaultInput
-            type="text"
+            type="number"
             placeholder="Número"
             {...register('numero', { valueAsNumber: true })}
           />
