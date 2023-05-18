@@ -23,11 +23,16 @@ export const NoItemsDescriptions = styled.div`
   background: ${(props) => props.theme['base-card']};
   border-radius: 6px 36px;
 
-  font-family: 'Baloo 2', sans-serif;
   font-weight: 400;
 
   padding: 2.5rem 3rem;
+  display: flex;
   align-items: center;
+
+  svg {
+    color: ${(props) => props.theme.purple};
+    margin-right: 1rem;
+  }
 `
 
 export const LabelPriceContainer = styled.div`

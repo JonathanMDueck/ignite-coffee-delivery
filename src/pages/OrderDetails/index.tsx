@@ -21,12 +21,17 @@ const newOrderFormValidationSchema = zod.object({
 type NewOrderFormData = zod.infer<typeof newOrderFormValidationSchema>
 
 export function OrderDetails() {
-  const { createNewOrder } = useContext(OrderContext)
+  const { createNewOrder, order } = useContext(OrderContext)
 
   const navigate = useNavigate()
 
   function navigateToConfirmedOrderPage() {
     navigate('/confirmedorder')
+  }
+
+  function checkPaymentMethod() {
+    const condition = order?.payment
+    return condition !== ''
   }
 
   const newOrderForm = useForm<NewOrderFormData>({
@@ -64,7 +69,10 @@ export function OrderDetails() {
     }
 
     createNewOrder(newOrder)
-    navigateToConfirmedOrderPage()
+
+    checkPaymentMethod()
+      ? navigateToConfirmedOrderPage()
+      : alert('Please select a payment option')
   }
 
   return (

@@ -11,6 +11,7 @@ import {
 import { SelectedCoffeeCard } from '../SelectedCoffeeCard'
 import { useContext } from 'react'
 import { SelectedCoffeeContext } from '../../../../contexts/selectedCoffeeContext'
+import { Prohibit } from 'phosphor-react'
 
 export function SelectedCoffeeDetails() {
   const { shoppingCartPrice } = useContext(SelectedCoffeeContext)
@@ -21,7 +22,10 @@ export function SelectedCoffeeDetails() {
     <SelectedCoffeeContainer>
       <span>Cafés selecionados</span>
       {totalItems === 0 ? (
-        <NoItemsDescriptions>Nenhum Café Selecionado</NoItemsDescriptions>
+        <NoItemsDescriptions>
+          <Prohibit size={26} />
+          Nenhum Café Selecionado
+        </NoItemsDescriptions>
       ) : (
         <OrderDescription>
           <SelectedCoffeeCard />
