@@ -7,6 +7,7 @@ import {
   OrderInfo,
   PaymentIcon,
   TimeIcon,
+  Border
 } from './styles'
 
 import ConfirmedOrderImage from '../../assets/ConfirmedOrder.png'
@@ -20,6 +21,7 @@ export function ConfirmedOrder() {
       <OrderInfo>
         <span>Uhu! Pedido confirmado</span>
         <p>Agora é só aguardar que logo o café chegará até você</p>
+        <Border>
         <OrderDetails>
           <BaseInfo>
             <MapPinIcon>
@@ -61,6 +63,7 @@ export function ConfirmedOrder() {
             </div>
           </BaseInfo>
         </OrderDetails>
+        </Border>
       </OrderInfo>
       <img src={ConfirmedOrderImage} alt="" />
     </ConfirmedOrderContainer>

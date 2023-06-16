@@ -11,4 +11,5 @@ export const OrderDetailsContainer = styled.form`
   color: ${(props) => props.theme['base-subtitle']};
 
   display: flex;
+  justify-content: center;
 `

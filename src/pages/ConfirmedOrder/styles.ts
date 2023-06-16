@@ -33,11 +33,19 @@ export const OrderInfo = styled.div`
 `
 
 export const OrderDetails = styled.div`
-  border: solid 1px ${(props) => props.theme.yellow};
-
+  /* border: solid 1px ${(props) => props.theme.yellow}; */
+  border: none;
   padding: 2.5rem;
+  border-radius: 5px 35px;
+  background: ${props => props.theme.background};
+  
+`
+
+export const Border = styled.div`
+  background: linear-gradient(to right, ${props => props.theme.yellow}, ${props => props.theme.purple});
   border-radius: 6px 36px;
   width: 32.875rem;
+  padding: 1px;
 `
 
 export const BaseInfo = styled.div`

@@ -81,6 +81,7 @@ export const RemoveButton = styled.button`
   font-size: 0.75rem;
 
   display: flex;
+  align-items: center;
   padding: 0.5rem;
 
   height: 2rem;
